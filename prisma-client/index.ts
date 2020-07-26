@@ -140,28 +140,13 @@ export interface ClientConstructor<T> {
  * Types
  */
 
-export type ThingOrderByInput =
-  | "id_ASC"
-  | "id_DESC"
-  | "name_ASC"
-  | "name_DESC"
-  | "content_ASC"
-  | "content_DESC"
-  | "color_ASC"
-  | "color_DESC";
+export type ThingOrderByInput = "id_ASC" | "id_DESC" | "name_ASC" | "name_DESC";
 
-export type UserOrderByInput =
-  | "userId_ASC"
-  | "userId_DESC"
-  | "id_ASC"
-  | "id_DESC"
-  | "name_ASC"
-  | "name_DESC";
+export type UserOrderByInput = "id_ASC" | "id_DESC" | "name_ASC" | "name_DESC";
 
 export type MutationType = "CREATED" | "UPDATED" | "DELETED";
 
 export interface UserCreateInput {
-  userId?: Maybe<ID_Input>;
   id?: Maybe<ID_Input>;
   name: String;
 }
@@ -172,8 +157,6 @@ export type ThingWhereUniqueInput = AtLeastOne<{
 
 export interface ThingUpdateInput {
   name?: Maybe<String>;
-  content?: Maybe<String>;
-  color?: Maybe<String>;
 }
 
 export interface ThingSubscriptionWhereInput {
@@ -216,54 +199,12 @@ export interface ThingWhereInput {
   name_not_starts_with?: Maybe<String>;
   name_ends_with?: Maybe<String>;
   name_not_ends_with?: Maybe<String>;
-  content?: Maybe<String>;
-  content_not?: Maybe<String>;
-  content_in?: Maybe<String[] | String>;
-  content_not_in?: Maybe<String[] | String>;
-  content_lt?: Maybe<String>;
-  content_lte?: Maybe<String>;
-  content_gt?: Maybe<String>;
-  content_gte?: Maybe<String>;
-  content_contains?: Maybe<String>;
-  content_not_contains?: Maybe<String>;
-  content_starts_with?: Maybe<String>;
-  content_not_starts_with?: Maybe<String>;
-  content_ends_with?: Maybe<String>;
-  content_not_ends_with?: Maybe<String>;
-  color?: Maybe<String>;
-  color_not?: Maybe<String>;
-  color_in?: Maybe<String[] | String>;
-  color_not_in?: Maybe<String[] | String>;
-  color_lt?: Maybe<String>;
-  color_lte?: Maybe<String>;
-  color_gt?: Maybe<String>;
-  color_gte?: Maybe<String>;
-  color_contains?: Maybe<String>;
-  color_not_contains?: Maybe<String>;
-  color_starts_with?: Maybe<String>;
-  color_not_starts_with?: Maybe<String>;
-  color_ends_with?: Maybe<String>;
-  color_not_ends_with?: Maybe<String>;
   AND?: Maybe<ThingWhereInput[] | ThingWhereInput>;
   OR?: Maybe<ThingWhereInput[] | ThingWhereInput>;
   NOT?: Maybe<ThingWhereInput[] | ThingWhereInput>;
 }
 
 export interface UserWhereInput {
-  userId?: Maybe<ID_Input>;
-  userId_not?: Maybe<ID_Input>;
-  userId_in?: Maybe<ID_Input[] | ID_Input>;
-  userId_not_in?: Maybe<ID_Input[] | ID_Input>;
-  userId_lt?: Maybe<ID_Input>;
-  userId_lte?: Maybe<ID_Input>;
-  userId_gt?: Maybe<ID_Input>;
-  userId_gte?: Maybe<ID_Input>;
-  userId_contains?: Maybe<ID_Input>;
-  userId_not_contains?: Maybe<ID_Input>;
-  userId_starts_with?: Maybe<ID_Input>;
-  userId_not_starts_with?: Maybe<ID_Input>;
-  userId_ends_with?: Maybe<ID_Input>;
-  userId_not_ends_with?: Maybe<ID_Input>;
   id?: Maybe<ID_Input>;
   id_not?: Maybe<ID_Input>;
   id_in?: Maybe<ID_Input[] | ID_Input>;
@@ -300,13 +241,10 @@ export interface UserWhereInput {
 export interface ThingCreateInput {
   id?: Maybe<ID_Input>;
   name: String;
-  content: String;
-  color: String;
 }
 
 export type UserWhereUniqueInput = AtLeastOne<{
-  userId: Maybe<ID_Input>;
-  id?: Maybe<ID_Input>;
+  id: Maybe<ID_Input>;
 }>;
 
 export interface UserUpdateManyMutationInput {
@@ -315,8 +253,6 @@ export interface UserUpdateManyMutationInput {
 
 export interface ThingUpdateManyMutationInput {
   name?: Maybe<String>;
-  content?: Maybe<String>;
-  color?: Maybe<String>;
 }
 
 export interface UserSubscriptionWhereInput {
@@ -379,7 +315,6 @@ export interface PageInfoSubscription
 }
 
 export interface UserPreviousValues {
-  userId: ID_Output;
   id: ID_Output;
   name: String;
 }
@@ -387,7 +322,6 @@ export interface UserPreviousValues {
 export interface UserPreviousValuesPromise
   extends Promise<UserPreviousValues>,
     Fragmentable {
-  userId: () => Promise<ID_Output>;
   id: () => Promise<ID_Output>;
   name: () => Promise<String>;
 }
@@ -395,7 +329,6 @@ export interface UserPreviousValuesPromise
 export interface UserPreviousValuesSubscription
   extends Promise<AsyncIterator<UserPreviousValues>>,
     Fragmentable {
-  userId: () => Promise<AsyncIterator<ID_Output>>;
   id: () => Promise<AsyncIterator<ID_Output>>;
   name: () => Promise<AsyncIterator<String>>;
 }
@@ -470,8 +403,6 @@ export interface ThingSubscriptionPayloadSubscription
 export interface ThingPreviousValues {
   id: ID_Output;
   name: String;
-  content: String;
-  color: String;
 }
 
 export interface ThingPreviousValuesPromise
@@ -479,8 +410,6 @@ export interface ThingPreviousValuesPromise
     Fragmentable {
   id: () => Promise<ID_Output>;
   name: () => Promise<String>;
-  content: () => Promise<String>;
-  color: () => Promise<String>;
 }
 
 export interface ThingPreviousValuesSubscription
@@ -488,8 +417,6 @@ export interface ThingPreviousValuesSubscription
     Fragmentable {
   id: () => Promise<AsyncIterator<ID_Output>>;
   name: () => Promise<AsyncIterator<String>>;
-  content: () => Promise<AsyncIterator<String>>;
-  color: () => Promise<AsyncIterator<String>>;
 }
 
 export interface ThingEdge {
@@ -510,13 +437,11 @@ export interface ThingEdgeSubscription
 }
 
 export interface User {
-  userId: ID_Output;
   id: ID_Output;
   name: String;
 }
 
 export interface UserPromise extends Promise<User>, Fragmentable {
-  userId: () => Promise<ID_Output>;
   id: () => Promise<ID_Output>;
   name: () => Promise<String>;
 }
@@ -524,7 +449,6 @@ export interface UserPromise extends Promise<User>, Fragmentable {
 export interface UserSubscription
   extends Promise<AsyncIterator<User>>,
     Fragmentable {
-  userId: () => Promise<AsyncIterator<ID_Output>>;
   id: () => Promise<AsyncIterator<ID_Output>>;
   name: () => Promise<AsyncIterator<String>>;
 }
@@ -532,7 +456,6 @@ export interface UserSubscription
 export interface UserNullablePromise
   extends Promise<User | null>,
     Fragmentable {
-  userId: () => Promise<ID_Output>;
   id: () => Promise<ID_Output>;
   name: () => Promise<String>;
 }
@@ -556,15 +479,11 @@ export interface AggregateUserSubscription
 export interface Thing {
   id: ID_Output;
   name: String;
-  content: String;
-  color: String;
 }
 
 export interface ThingPromise extends Promise<Thing>, Fragmentable {
   id: () => Promise<ID_Output>;
   name: () => Promise<String>;
-  content: () => Promise<String>;
-  color: () => Promise<String>;
 }
 
 export interface ThingSubscription
@@ -572,8 +491,6 @@ export interface ThingSubscription
     Fragmentable {
   id: () => Promise<AsyncIterator<ID_Output>>;
   name: () => Promise<AsyncIterator<String>>;
-  content: () => Promise<AsyncIterator<String>>;
-  color: () => Promise<AsyncIterator<String>>;
 }
 
 export interface ThingNullablePromise
@@ -581,8 +498,6 @@ export interface ThingNullablePromise
     Fragmentable {
   id: () => Promise<ID_Output>;
   name: () => Promise<String>;
-  content: () => Promise<String>;
-  color: () => Promise<String>;
 }
 
 export interface UserSubscriptionPayload {
@@ -687,6 +602,6 @@ export const models: Model[] = [
 export const Prisma = makePrismaClientClass<ClientConstructor<Prisma>>({
   typeDefs,
   models,
-  endpoint: `https://us1.prisma.sh/jachiike-c-madubuko/portfolio/dev`
+  endpoint: `https://us1.prisma.sh/jachiike-c-madubuko/pbandj/dev`
 });
 export const prisma = new Prisma();

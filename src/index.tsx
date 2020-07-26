@@ -10,7 +10,7 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 
 const client = new ApolloClient( {
-  uri: 'https://us1.prisma.sh/jachiike-c-madubuko/portfolio/dev'
+  uri: 'https://us1.prisma.sh/jachiike-c-madubuko/pbandj/dev'
 } );
 
 const render = () => {

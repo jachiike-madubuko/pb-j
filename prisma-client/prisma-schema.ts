@@ -66,8 +66,6 @@ type Subscription {
 type Thing {
   id: ID!
   name: String!
-  content: String!
-  color: String!
 }
 
 type ThingConnection {
@@ -79,8 +77,6 @@ type ThingConnection {
 input ThingCreateInput {
   id: ID
   name: String!
-  content: String!
-  color: String!
 }
 
 type ThingEdge {
@@ -93,17 +89,11 @@ enum ThingOrderByInput {
   id_DESC
   name_ASC
   name_DESC
-  content_ASC
-  content_DESC
-  color_ASC
-  color_DESC
 }
 
 type ThingPreviousValues {
   id: ID!
   name: String!
-  content: String!
-  color: String!
 }
 
 type ThingSubscriptionPayload {
@@ -126,14 +116,10 @@ input ThingSubscriptionWhereInput {
 
 input ThingUpdateInput {
   name: String
-  content: String
-  color: String
 }
 
 input ThingUpdateManyMutationInput {
   name: String
-  content: String
-  color: String
 }
 
 input ThingWhereInput {
@@ -165,34 +151,6 @@ input ThingWhereInput {
   name_not_starts_with: String
   name_ends_with: String
   name_not_ends_with: String
-  content: String
-  content_not: String
-  content_in: [String!]
-  content_not_in: [String!]
-  content_lt: String
-  content_lte: String
-  content_gt: String
-  content_gte: String
-  content_contains: String
-  content_not_contains: String
-  content_starts_with: String
-  content_not_starts_with: String
-  content_ends_with: String
-  content_not_ends_with: String
-  color: String
-  color_not: String
-  color_in: [String!]
-  color_not_in: [String!]
-  color_lt: String
-  color_lte: String
-  color_gt: String
-  color_gte: String
-  color_contains: String
-  color_not_contains: String
-  color_starts_with: String
-  color_not_starts_with: String
-  color_ends_with: String
-  color_not_ends_with: String
   AND: [ThingWhereInput!]
   OR: [ThingWhereInput!]
   NOT: [ThingWhereInput!]
@@ -203,7 +161,6 @@ input ThingWhereUniqueInput {
 }
 
 type User {
-  userId: ID!
   id: ID!
   name: String!
 }
@@ -215,7 +172,6 @@ type UserConnection {
 }
 
 input UserCreateInput {
-  userId: ID
   id: ID
   name: String!
 }
@@ -226,8 +182,6 @@ type UserEdge {
 }
 
 enum UserOrderByInput {
-  userId_ASC
-  userId_DESC
   id_ASC
   id_DESC
   name_ASC
@@ -235,7 +189,6 @@ enum UserOrderByInput {
 }
 
 type UserPreviousValues {
-  userId: ID!
   id: ID!
   name: String!
 }
@@ -267,20 +220,6 @@ input UserUpdateManyMutationInput {
 }
 
 input UserWhereInput {
-  userId: ID
-  userId_not: ID
-  userId_in: [ID!]
-  userId_not_in: [ID!]
-  userId_lt: ID
-  userId_lte: ID
-  userId_gt: ID
-  userId_gte: ID
-  userId_contains: ID
-  userId_not_contains: ID
-  userId_starts_with: ID
-  userId_not_starts_with: ID
-  userId_ends_with: ID
-  userId_not_ends_with: ID
   id: ID
   id_not: ID
   id_in: [ID!]
@@ -315,7 +254,6 @@ input UserWhereInput {
 }
 
 input UserWhereUniqueInput {
-  userId: ID
   id: ID
 }
 `

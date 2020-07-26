@@ -21,7 +21,7 @@ const PrismaTest: React.FC<PrismaTestProps>= props => {
     React.useEffect( () => {
         (
             () => {
-                 setthingData(data.things)
+                //  setthingData(data.things)
             }
         )()
     },[loading])
