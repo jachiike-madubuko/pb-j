@@ -1,11 +1,8 @@
 {
-    "folders": [
+	"folders": [
 		{
 			"path": ".."
-		},
-		{
-			"path": "..\\..\\HorseAway-Mobile"
 		}
 	],
-    "settings": {}
+	"settings": {}
 }

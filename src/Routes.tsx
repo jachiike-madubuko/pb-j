@@ -3,6 +3,8 @@ import {Main} from "./components/templates"
 import React from "react"
 import { Counter } from "./features/counter/Counter"
 import Auth from "./components/organisms/Auth";
+import Dash from './components/templates/Dash';
+import LeanCanvas from './components/templates/LeanCanvas';
 
 export interface RouteProps  {
     children?: React.ReactNode
@@ -19,12 +21,7 @@ const Home: React.FC<RouteProps> = props => (
     </div>
 )
 
-const Dash: React.FC<RouteProps> = props => (
-    <div>
-        Dash
-         <Counter/>
-    </div>
-)
+
 const Routes = () => {
 
     return (
@@ -33,6 +30,7 @@ const Routes = () => {
                 <Home path="/" />
                 <Auth path="auth"  />
                 <Dash path="dashboard" />
+                <LeanCanvas path="lean" />
             </Main>
         </Router>
     )

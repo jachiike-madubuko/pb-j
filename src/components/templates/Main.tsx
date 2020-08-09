@@ -17,6 +17,7 @@ import Paper from '@material-ui/core/Paper';
 import fire from '../../utils/fire';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
+import TopNav from '../organisms/TopNav';
 
 // import SideNav from '../organisms/';
 const MainLayout: React.FC<RouteProps> = props => {
@@ -63,35 +64,9 @@ const MainLayout: React.FC<RouteProps> = props => {
                     height={60}
                     isFixed={false}
                 >
-                    <Paper>
-                        <Wrapper borderColor="gold">
-                            <div css={{ flex: 1, flexDirection: 'row' }}>
-
-                                <div css={{ textAlign: 'center', flex: 1 }}>
-                                    {user ? (
-                                        <p>
-                                            Hi {user.email}
-                                        </p>
-
-                                    ) : (
-                                            <p>
-                                                Login
-                                            </p>
-                                        )}
-                                </div>
-
-                                <div css={{ textAlign: 'center', flex: 1 }}>
-
-                                    <Link to="/">🏡</Link>
-                                    <span css={{ margin: 25 }}>
-                                        <Link to="auth">🔐</Link>
-                                    </span>
-                                    <Link to="dashboard">🤑</Link>
-                                </div>
-
-                            </div>
-                        </Wrapper>
-                    </Paper>
+                    <Wrapper borderColor="gold">
+                        <TopNav />
+                    </Wrapper>
                 </Banner>
                 <TopNavigation
                     testId="topNavigation"
@@ -156,7 +131,7 @@ const MainLayout: React.FC<RouteProps> = props => {
                     </RightPanel>
                 }
             </PageLayout>
-        </Paper>
+        </Paper >
     )
 }
 
