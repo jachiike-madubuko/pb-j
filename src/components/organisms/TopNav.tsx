@@ -9,7 +9,7 @@ const TopNav = () => {
 
     return (
         <Paper css={{ flex: 1, flexDirection: 'row' }}>
-        <div >
+            <div >
                 {/*
                     <div css={{ textAlign: 'center', flex: 1 }}>
                         {user ? (
@@ -27,18 +27,21 @@ const TopNav = () => {
 
                 <div css={{ textAlign: 'center', flex: 1 }}>
 
-                    <Link to="/">🏡</Link>
-                    <span css={{ margin: 25 }}>
-                        <Link to="auth">🔐</Link>
-                    </span>
-                    <Link to="dashboard">🤑</Link>
-                    <span css={{ margin: 25 }}>
-                        <Link to="lean">🧨</Link>
-                    </span>
+                    <h1>
+
+                        <Link to="/">🏡</Link>
+                        <span css={{ margin: 25 }}>
+                            <Link to="auth">🔐 Auth</Link>
+                        </span>
+                        <Link to="dashboard">🤑 Dash</Link>
+                        <span css={{ margin: 25 }}>
+                            <Link to="canvas">🧨 Canvas</Link>
+                        </span>
+                    </h1>
                 </div>
 
-        </div>
-            </Paper>
+            </div>
+        </Paper>
 
     )
 }

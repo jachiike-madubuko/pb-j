@@ -2,10 +2,10 @@ import React from "react"
 import { RouteProps } from "../../Routes"
 import { Counter } from "../../features/counter/Counter"
 import { Paper } from "@material-ui/core"
-import products from './../../product';
+import products from '../../product';
 // TODO load in product json
 
-const leanCanvas: React.FC<RouteProps> = props => {
+const LeanSprints: React.FC<RouteProps> = props => {
 
     const product = products[0]
     const { lean_canvas } = product.ci
@@ -64,4 +64,4 @@ const leanCanvas: React.FC<RouteProps> = props => {
     )
 }
 
-export default leanCanvas
+export default LeanSprints
