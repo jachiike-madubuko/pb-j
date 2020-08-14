@@ -9,7 +9,6 @@ const Dash: React.FC<RouteProps> = props =>  {
         <div>
             Dash
             <Counter />
-            <Counter />
             </div>
         )
 }

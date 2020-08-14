@@ -3,6 +3,7 @@ import { RouteProps } from "../../Routes"
 import { Counter } from "../../features/counter/Counter"
 import { Paper } from "@material-ui/core"
 import products from './../../product';
+import LeanCanvasSection from "../organisms/LeanCanvasSection";
 // TODO load in product json
 
 const leanCanvas: React.FC<RouteProps> = props => {
@@ -15,49 +16,49 @@ const leanCanvas: React.FC<RouteProps> = props => {
             <h2>
             {product.name}
             </h2>
-            <Paper>Problem
+            <Paper>
 
-            {JSON.stringify(lean_canvas.problems.assumptions)}
+
+                <LeanCanvasSection name={'Problem'} data={lean_canvas.problems.assumptions}/>
             </Paper>
             <br />
             <Paper>
-                Solution
 
-            {JSON.stringify(lean_canvas.solutions.assumptions)}
+            <LeanCanvasSection name={'Solution'} data={lean_canvas.solutions.assumptions}/>
             </Paper>
             <br />
-            <Paper>Metrics
+            <Paper>
 
-            {JSON.stringify(lean_canvas.metrics.assumptions)}
+            <LeanCanvasSection name={'Metrics'} data={lean_canvas.metrics.assumptions}/>
             </Paper>
             <br />
-            <Paper>UVP
+            <Paper>
 
-            {JSON.stringify(lean_canvas.values.assumptions)}
+            <LeanCanvasSection name={'UVP'} data={lean_canvas.values.assumptions}/>
             </Paper>
             <br />
-            <Paper>Advantage
-            {JSON.stringify(lean_canvas.advantages.assumptions)}
-
-            </Paper>
-            <br />
-            <Paper>Channel
-            {JSON.stringify(lean_canvas.channels.assumptions)}
+            <Paper>
+            <LeanCanvasSection name={'Advantage'} data={lean_canvas.advantages.assumptions}/>
 
             </Paper>
             <br />
-            <Paper>Customer
-            {JSON.stringify(lean_canvas.customers.assumptions)}
+            <Paper>
+            <LeanCanvasSection name={'Channel'} data={lean_canvas.channels.assumptions}/>
 
             </Paper>
             <br />
-            <Paper>Cost Structure
-            {JSON.stringify(lean_canvas.costs.assumptions)}
+            <Paper>
+            <LeanCanvasSection name={'Customer'} data={lean_canvas.customers.assumptions}/>
 
             </Paper>
             <br />
-            <Paper>Revenue Stream
-            {JSON.stringify(lean_canvas.revenue.assumptions)}
+            <Paper>
+            <LeanCanvasSection name={'Cost Structure'} data={lean_canvas.costs.assumptions}/>
+
+            </Paper>
+            <br />
+            <Paper>
+            <LeanCanvasSection name={'Revenue Stream'} data={lean_canvas.revenue.assumptions}/>
 
             </Paper>
         </div>
